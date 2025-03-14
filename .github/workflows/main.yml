@@ -1,8 +1,25 @@
-name: hello-world
-on: push
+name: Ejecutar pruebas con pytest
+
+on: 
+  push:  # Solo se ejecutará cuando hagas un push
+
 jobs:
-  my-job:
+  test:
     runs-on: ubuntu-latest
+
     steps:
-      - name: my-step
-        run: echo "Hola compañeros de Ing. de Software 2"
+      - name: 📥 Clonar el repositorio
+        uses: actions/checkout@v4
+
+      - name: 🐍 Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"  # Usa la versión de Python que necesites
+
+      - name: 📦 Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+
+      - name: 🧪 Ejecutar pruebas con pytest
+        run: pytest --maxfail=1 --disable-warnings -v
