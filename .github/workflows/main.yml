@@ -22,4 +22,12 @@ jobs:
           pip install pytest
 
       - name: 🧪 Ejecutar pruebas con pytest
-        run: pytest --maxfail=1 --disable-warnings -v
+        run: pytest --disable-warnings -v
+
+      - name: 🎉 Mensaje de éxito
+        if: success()  # Solo se ejecuta si pytest no falla
+        run: echo "Lo lograste, campeón 🏆🔥"
+
+      - name: ❌ Mensaje de error
+        if: failure()
+        run: echo "JAJAJJAJAJAJAJA xddddd"

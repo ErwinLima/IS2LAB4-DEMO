@@ -11,3 +11,9 @@ def test_resta():
     resul = resta(a,b)
     expected = 2
     assert resul == expected, f"Error: resta({a}, {b}) debería ser {expected}, pero dio {resul}"
+
+def test_resta2():
+    a, b = 4, 2
+    resul = resta(a,b)
+    expected = 1
+    assert resul == expected, f"Error: resta({a}, {b}) debería ser {expected}, pero dio {resul}"
