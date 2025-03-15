@@ -1,7 +1,7 @@
 name: Ejecutar pruebas con pytest
 
 on: 
-  push:  # Solo se ejecutará cuando hagas un push
+  push:  
 
 jobs:
   test:
@@ -14,7 +14,7 @@ jobs:
       - name: 🐍 Configurar Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.12"  # Usa la versión de Python que necesites
+          python-version: "3.12" 
 
       - name: 📦 Instalar dependencias
         run: |
